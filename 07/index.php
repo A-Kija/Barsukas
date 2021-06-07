@@ -53,3 +53,19 @@ return count($a) <=> count($b);
 });
 
 _d($masyvas2);
+
+
+$m = [
+    ['A', 'B'],
+    ['U', 'P'],
+    ['T', 'H'],
+    ['C', 'A']
+];
+
+_d($m);
+
+usort($m, function($a, $b) {
+    return -($a[0].$a[1] <=> $b[0].$b[1]);
+});
+
+_d($m);
