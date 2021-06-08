@@ -30,20 +30,25 @@ function calc($action, ...$arg)
     _d($arg);
     $answ = 0;
     foreach ($arg as $val) {
-        if ($action == '+') {
+        if ($action == 'plus') {
             $answ += $val;
         }
-        elseif ($action == '-') {
+        elseif ($action == 'minus') {
             $answ -= $val;
         }
-        
     }
-
+    if ($action == 'petras') {
+        return 'labas Petrai';
+    }
     return $answ;
 }
 
 _d( 
-    calc('-', 1, 5, 8)
+    calc('minus', 1, 5, 8),
+);
+
+_d( 
+    calc('petras')
 );
 
 // echo $viso;

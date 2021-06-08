@@ -33,10 +33,17 @@ _d($sums);
 $abc = range('A', 'Z');
 foreach (range(1, 10) as $keyBig => $_) {
     foreach (range(1, rand(2, 20)) as $keySmall => $_) {
-        
         $masyvas2[$keyBig][$keySmall] = $abc[rand(0, 25)];
     }
 }
+
+_d($masyvas2, 'Labas');
+foreach($masyvas2 as &$mazas) {
+    usort($mazas, function($a, $b) {
+        return $a<=>$b;
+    });
+}
+_d($masyvas2, 'Labas2');
 
 
 
