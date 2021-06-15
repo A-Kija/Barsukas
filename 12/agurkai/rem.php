@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pridėti naują dėžę</title>
+    <title>Išimti agurkų</title>
 </head>
 <body>
     <?php include __DIR__ . '/menu.php' ?>
-    <form action="?action=add-box" method="post">
-        <button>Pridėti naują dėžę</button>
+    <?php $id = $_GET['id'] ?? 0 ?>
+    <form action="?action=rem&id=<?= $id ?>" method="post">
+        <input type="text" name="amount">
+        <button>Atimti Atimti agurkų</button>
     </form>
 </body>
 </html>
