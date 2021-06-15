@@ -11,7 +11,9 @@ if (!file_exists(__DIR__.'/boxes.json')) {
     file_put_contents(__DIR__.'/boxes.json', json_encode([]));
 }
 $boxes = json_decode( file_get_contents(__DIR__.'/boxes.json'), 1);
+//
 
+//Routerio Prosenelis
 
 // 1. Agurku deziu saraso atvaizdavimas GET
 if (!isset($_GET['action']) && $_SERVER['REQUEST_METHOD'] == 'GET') {
