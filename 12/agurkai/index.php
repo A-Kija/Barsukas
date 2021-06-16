@@ -15,6 +15,8 @@ function redirectToAction($action, $id = 0)
     }
     die;
 }
+// redirectBack()  //
+
 function getMessage()
 {
     if (!isset($_SESSION['msg'])) {
