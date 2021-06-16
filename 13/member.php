@@ -1,5 +1,7 @@
 <?php
-session_start();
+
+require __DIR__ . '/bootstrap.php';
+
 if (!isset($_SESSION['logged'])) {
     header('Location: http://localhost/barsukas/13/login.php');
     die;
@@ -16,6 +18,7 @@ if (!isset($_SESSION['logged'])) {
 </head>
 <body>
     <?php include __DIR__ . '/menu.php' ?>
+    <?php include __DIR__ . '/msg.php' ?>
     <h1>Member Page</h1>
 </body>
 </html>

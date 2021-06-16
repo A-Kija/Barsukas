@@ -1,7 +1,5 @@
 <?php
-session_start();
-
-
+require __DIR__ . '/bootstrap.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +11,7 @@ session_start();
 </head>
 <body>
     <?php include __DIR__ . '/menu.php' ?>
+    <?php include __DIR__ . '/msg.php' ?>
     <h1>Home Page</h1>
 </body>
 </html>
