@@ -1,5 +1,16 @@
 <?php
 session_start();
+
+// _d($_SERVER['REQUEST_METHOD'], 'method---->');
+
+
+
+
+// GET
+// 1,2 ===> 1 session is empty or  2 not empty
+// POST
+// 3
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_SESSION['results'])) {   // [5, 1]  [sugeneruota, pazymeta]
     // 1 scenarijus Formos Rodymas GET
@@ -7,20 +18,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $count = rand(3, 10);
     $color = 'black';
     $form = true;
+    // _d($_SESSION, 'seess---->');
     }
     else {
     // 2 scenarijus Rezultatų Rodymas GET
     $color = 'white';
     $form = false;
-    $sugeneruota = $_SESSION['results'][0];
-    $pazymeta = $_SESSION['results'][1];
+    $sugeneruota = $_SESSION['results']['sugeneruota'];
+    $pazymeta = $_SESSION['results']['pazymeta'];
+    // _d($_SESSION, 'seess---->');
     unset($_SESSION['results']);
+    
     }
 }
 else {
     // 3 scenarijus Checkboksų skaičiavimas POST
-    $_SESSION['results'][0] = $_POST['count'];
-    $_SESSION['results'][1] = count($_POST['let'] ?? []);
+    $_SESSION['results']['sugeneruota'] = $_POST['count'];
+    $_SESSION['results']['pazymeta'] = count($_POST['let'] ?? []);
+    // _d($_SESSION, 'seess---->');
     header('Location: http://localhost/barsukas/12/nd79_sess.php');
     die;
 }
