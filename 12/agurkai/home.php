@@ -24,6 +24,7 @@
             <button type="submit">Išmesti dėžę</button>
             </form>
         </li>
+        
     <?php endforeach ?>
     </ul>
 </body>
