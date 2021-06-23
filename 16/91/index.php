@@ -8,6 +8,7 @@ $kibirasB = new Kibiras1;
 
 _d($kibirasA->kiekPririnktaAkmenu(), 'A');
 _d($kibirasB->kiekPririnktaAkmenu(), 'B');
+_d(Kibiras1::kiekVisoPririnktaAkmenu(), 'VISO');
 
 $kibirasA->prideti1Akmeni();
 $kibirasA->prideti1Akmeni();
@@ -17,4 +18,5 @@ $kibirasA->pridetiDaugAkmenu(3);
 
 _d($kibirasA->kiekPririnktaAkmenu(), 'A');
 _d($kibirasB->kiekPririnktaAkmenu(), 'B');
+_d(Kibiras1::kiekVisoPririnktaAkmenu(), 'VISO');
 
