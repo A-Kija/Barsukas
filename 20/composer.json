@@ -10,8 +10,9 @@
             "Zoo\\": "",
             "Australia\\": "australai",
             "Belgium\\": "belgai"
-
         }
     },
-    "require": {}
+    "require": {
+        "ramsey/uuid": "^4.1"
+    }
 }

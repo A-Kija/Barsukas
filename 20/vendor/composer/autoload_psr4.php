@@ -7,6 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Zoo\\' => array($baseDir . '/'),
+    'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
+    'Ramsey\\Uuid\\' => array($vendorDir . '/ramsey/uuid/src'),
+    'Ramsey\\Collection\\' => array($vendorDir . '/ramsey/collection/src'),
+    'Brick\\Math\\' => array($vendorDir . '/brick/math/src'),
     'Belgium\\' => array($baseDir . '/belgai'),
     'Australia\\' => array($baseDir . '/australai'),
 );

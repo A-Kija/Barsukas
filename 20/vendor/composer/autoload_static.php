@@ -6,13 +6,28 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit3dce6c0833543793cdfd72fb560848b9
 {
+    public static $files = array (
+        '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
+        'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'Z' => 
         array (
             'Zoo\\' => 4,
         ),
+        'S' => 
+        array (
+            'Symfony\\Polyfill\\Ctype\\' => 23,
+        ),
+        'R' => 
+        array (
+            'Ramsey\\Uuid\\' => 12,
+            'Ramsey\\Collection\\' => 18,
+        ),
         'B' => 
         array (
+            'Brick\\Math\\' => 11,
             'Belgium\\' => 8,
         ),
         'A' => 
@@ -25,6 +40,22 @@ class ComposerStaticInit3dce6c0833543793cdfd72fb560848b9
         'Zoo\\' => 
         array (
             0 => __DIR__ . '/../..' . '/',
+        ),
+        'Symfony\\Polyfill\\Ctype\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Ramsey\\Uuid\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/uuid/src',
+        ),
+        'Ramsey\\Collection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/ramsey/collection/src',
+        ),
+        'Brick\\Math\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/brick/math/src',
         ),
         'Belgium\\' => 
         array (

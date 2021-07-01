@@ -73,7 +73,7 @@ require __DIR__ .'/vendor/autoload.php';
 
 
 
-echo Animal::$hello;
+echo Animal::sayUUID();
 // new Animal;
 echo AnimalA::$go;
 // new Belgium\Animal;
