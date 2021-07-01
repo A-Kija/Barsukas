@@ -21,7 +21,8 @@ class App {
         $uri = explode('/', $uri);
 
         if ($uri[0] == 'testas' && isset($uri[1])) {
-            return (new AgurkaiController)->agurkuTest($uri[1]);
+            $ac = new AgurkaiController;
+            return $ac->agurkuTest($uri[1]);
         }
         if ($uri[0] === '' && count($uri) === 1) {
             return (new AgurkaiController)->index();

@@ -74,7 +74,7 @@ class Tenisininkas {
             self::$zaidejas2->kamuoliukas = true;
         }
         // this is 2
-        if ($this->vardas == self::$zaidejas2->vardas) {
+        elseif ($this->vardas == self::$zaidejas2->vardas) {
             self::$zaidejas1->kamuoliukas = true;
         }
 

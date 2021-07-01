@@ -8,10 +8,11 @@ $t2 = new Tenisininkas('Mykolas');
 
 Tenisininkas::zaidimoPradzia();
 
-$t1->perduotiKamuoliuka();
 $t2->perduotiKamuoliuka();
 $t1->perduotiKamuoliuka();
 $t2->perduotiKamuoliuka();
+$t1->perduotiKamuoliuka();
+
 
 echo '<pre>';
 var_dump($t1);
