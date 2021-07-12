@@ -25,7 +25,12 @@ class AgurkaiController {
 
     public function index()
     {
-        return App::view('index', ['boxes' => self::getData()->showAll()]);
+        $boxes = self::getData()->showAll();
+
+        usort($boxes, fn ($a, $b) => $b['amount'] <=> $a['amount']);
+
+
+        return App::view('index', ['boxes' => $boxes]);
     }
 
     public function add($id)

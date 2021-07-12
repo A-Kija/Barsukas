@@ -81,7 +81,6 @@ class Maria implements DataBase {
         $sql = 
         "SELECT id, `count` as amount
         FROM dezes
-        ORDER BY `count` DESC
         ";
         $all = [];
         $stmt = $this->pdo->query($sql);
