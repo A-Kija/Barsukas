@@ -106,5 +106,19 @@ class Maria implements DataBase {
         return false === $user ? [] : $user;
     }
 
+    public function getCount(int $amount) : bool
+    {
+        $sql = 
+        "SELECT *
+        FROM dezes
+        WHERE count = ?
+        ";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$amount]);
+        $box = $stmt->fetch();
+        return false === $box ? true : false;
+    }
+
 
 }

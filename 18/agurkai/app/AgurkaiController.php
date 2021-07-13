@@ -41,9 +41,12 @@ class AgurkaiController {
     public function doAdd($id)
     {
         $id = (int) $id;
-        $box = self::getData()->show($id);
-        $box['amount'] += (int) $_POST['amount'];
-        self::getData()->update($id, $box);
+        $kiek = (int) $_POST['amount'];
+        if (self::getData()->getCount($kiek)) {
+            $box = self::getData()->show($id);
+            $box['amount'] += (int) $_POST['amount'];
+            self::getData()->update($id, $box);
+        }
         App::redirect();
     }
 
