@@ -68,4 +68,15 @@ class Json implements DataBase {
         return $this->data;
     }
 
+
+    public function getCount(int $amount) : bool
+    {
+        $counter = []; // veikia kaip Set'as
+        $counter[$amount] = null;
+        foreach($this->data as $box) {
+            $counter[ $box['amount'] ] = null;
+        }
+        return count($counter) !== count($this->data) ? true : false;
+    }
+
 }

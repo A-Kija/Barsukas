@@ -3,8 +3,8 @@ namespace Bank;
 
 class AgurkaiController {
 
-    // private static $dbType = 'json';
-    private static $dbType = 'maria';
+    private static $dbType = 'json';
+    // private static $dbType = 'maria';
     
     public static function getData()
     {
