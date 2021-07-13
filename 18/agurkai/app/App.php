@@ -22,6 +22,13 @@ class App {
         die;
     }
 
+    public static function checkLogin() 
+    {
+        if (!isset($_SESSION['logged'])) {
+            self::redirect('login');
+        }
+    }
+
     private static function router()
     {
         // $uri = str_replace(INSTALL_DIR, '', $_SERVER['REQUEST_URI']);
@@ -31,9 +38,23 @@ class App {
 
         array_shift($uri);
 
+        if ('login' == $uri[0]) {
+            if ('GET' == $_SERVER['REQUEST_METHOD']) {
+                return (new LoginController)->showLogin();
+            }
+            else {
+                return (new LoginController)->doLogin();
+            }
+        }
+
+        if ('logout' == $uri[0]) {
+            unset($_SESSION['logged'], $_SESSION['name']);
+            self::redirect('login');
+        }
 
 
         if ('create-box' == $uri[0]) {
+            self::checkLogin();
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
                 return (new AgurkaiController)->create();
             }
@@ -42,6 +63,7 @@ class App {
             }
         }
         if ('add' == $uri[0] && isset($uri[1])) {
+            self::checkLogin();
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
                 return (new AgurkaiController)->add($uri[1]);
             }
@@ -51,6 +73,7 @@ class App {
         }
 
         if ('rem' == $uri[0] && isset($uri[1])) {
+            self::checkLogin();
             if ('GET' == $_SERVER['REQUEST_METHOD']) {
                 return (new AgurkaiController)->remove($uri[1]);
             }
@@ -60,6 +83,7 @@ class App {
         }
 
         if ('delete' == $uri[0] && isset($uri[1]) && 'POST' == $_SERVER['REQUEST_METHOD']) {
+            self::checkLogin();
             return (new AgurkaiController)->delete($uri[1]);
         }
 
@@ -69,6 +93,9 @@ class App {
             $ac = new AgurkaiController;
             return $ac->agurkuTest($uri[1]);
         }
+
+
+
         if ($uri[0] === '' && count($uri) === 1) {
             return (new AgurkaiController)->index();
         }

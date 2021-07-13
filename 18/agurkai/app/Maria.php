@@ -92,4 +92,19 @@ class Maria implements DataBase {
     }
 
 
+    public function getUser(string $name, string $pass) : array
+    {
+        $sql = 
+        "SELECT *
+        FROM users
+        WHERE name = ? AND pass = ?
+        ";
+
+        $stmt = $this->pdo->prepare($sql);
+        $stmt->execute([$name, $pass]);
+        $user = $stmt->fetch();
+        return false === $user ? [] : $user;
+    }
+
+
 }
