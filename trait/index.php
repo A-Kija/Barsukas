@@ -8,6 +8,11 @@ require __DIR__ . '/Garvezys.php';
 $G = new Garvezys;
 
 
-$G->sound();
+$G->sound2();
+$G->soundDangus();
 $G->color();
-$G->windows();
+Garvezys::windows();
+
+echo Garvezys::$static .'<br>';
+
+echo $G->win .'<br>';
