@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class MasterController extends Controller
 {
+    
+    // public function __construct()
+    // {
+    //     $this->middleware('auth');
+    // }
+
     /**
      * Display a listing of the resource.
      *
@@ -43,7 +49,7 @@ class MasterController extends Controller
       //DB->stulpelio_vardas = Formos->name_atributas;
         $master->surname = $request->master_surname;
         $master->save();
-        return redirect()->route('master.index');
+        return redirect()->route('master.index')->with('success_message', 'New master has arrived.');
     }
 
     /**
@@ -81,7 +87,7 @@ class MasterController extends Controller
         //DB->stulpelio_vardas = Formos->name_atributas;
         $master->surname = $request->master_surname;
         $master->save();
-        return redirect()->route('master.index');
+        return redirect()->route('master.index')->with('success_message', 'Der master was edited.');
     }
 
     /**
@@ -93,9 +99,9 @@ class MasterController extends Controller
     public function destroy(Master $master)
     {
         if ($master->masterHasOutfits->count()){
-            return 'Trinti negalima, nes turi nebaigtų darbų';
+            return redirect()->back()->with('info_message', 'There is job to do. Can\'t delete.');
         }
         $master->delete();
-        return redirect()->route('master.index');
+        return redirect()->route('master.index')->with('success_message', 'Master gone.');
     }
 }
