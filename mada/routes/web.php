@@ -19,7 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -42,6 +42,8 @@ Route::group(['prefix' => 'outfits'], function(){
     Route::post('update/{outfit}', [OutfitController::class, 'update'])->name('outfit.update');
     Route::post('delete/{outfit}', [OutfitController::class, 'destroy'])->name('outfit.destroy');
     Route::get('show/{outfit}', [OutfitController::class, 'show'])->name('outfit.show');
+
+    Route::get('pdf/{outfit}', [OutfitController::class, 'pdf'])->name('outfit.pdf');
 });
  
  
